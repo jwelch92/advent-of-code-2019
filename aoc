@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ "$1" = "--newday" ]; then
+    currentDay="day$2"
+
+    mkdir "$currentDay"
+    cp ./.template/__init__.py "./$currentDay/__init__.py"
+    cp ./.template/day.py "./$currentDay/$currentDay.py"
+    cp ./.template/test_day.py "./$currentDay/test_$currentDay.py"
+    cp ./.template/input.txt "./$currentDay/input.txt"
+elif [ "$1" = "--test" ]; then
+  currentDay="day$2"
+  python "$currentDay/test_$currentDay.py"
+else
+    currentDay="day$1"
+    python "$currentDay/$currentDay.py"
+fi
