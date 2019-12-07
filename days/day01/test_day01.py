@@ -1,6 +1,6 @@
 import unittest
 
-from day01 import calc_fuel, part1, part2, slurp
+from .day01 import calc_fuel, part1, part2, slurp
 
 
 class TestDay1(unittest.TestCase):
